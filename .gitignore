@@ -1,0 +1,4 @@
+# Ignore Vite environment files
+vit
+vit/*
+vit/
