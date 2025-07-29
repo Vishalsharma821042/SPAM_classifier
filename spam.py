@@ -7,6 +7,7 @@ from nltk.corpus import stopwords
 stopwords.words('english')
 ps = PorterStemmer()
 
+nltk.download('punkt')
 
 def transform_text(text):
     """
