@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st 
 import pickle
 import nltk
 import string
@@ -6,8 +6,13 @@ from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 
 # Download required NLTK resources
-nltk.download('punkt')
-nltk.download('stopwords')
+try:
+    nltk.download('punkt')
+    nltk.download('punkt_tab')
+    nltk.download('stopwords')
+except Exception as e:
+    st.error(f"Failed to download NLTK resources: {str(e)}")
+    st.stop()
 
 ps = PorterStemmer()
 stop_words = set(stopwords.words('english'))  # Cache stopwords once
